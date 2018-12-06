@@ -29,15 +29,15 @@ function colorPalette (input, type, callback) {
   return paletteFromBitmap(input, type, callback)
 }
 
-function paletteFromBitmap (filename, type, callback) {
+function paletteFromBitmap (filename, type, noOfColors = 5, callback) {
   if (!callback) {
     callback = type
     type = null
   }
 
-  getPixels(filename, type, function (err, pixels) {
+  getPixels(filename, type, noOfColors, function (err, pixels) {
     if (err) return callback(err)
-    const palette = getRgbaPalette(pixels.data, 5).map(function (rgba) {
+    const palette = getRgbaPalette(pixels.data, noOfColors).map(function (rgba) {
       return chroma(rgba)
     })
 
