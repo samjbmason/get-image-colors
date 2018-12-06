@@ -10,7 +10,7 @@ const patterns = {
   svg: /svg$/i
 }
 
-function colorPalette (input, type, callback) {
+function colorPalette (input, type, noOfColors = 5, callback) {
   if (typeof type === 'function') {
     callback = type
     type = null
@@ -26,10 +26,10 @@ function colorPalette (input, type, callback) {
   }
 
   // PNG, GIF, JPG
-  return paletteFromBitmap(input, type, callback)
+  return paletteFromBitmap(input, type, noOfColors, callback)
 }
 
-function paletteFromBitmap (filename, type, noOfColors = 5, callback) {
+function paletteFromBitmap (filename, type, noOfColors, callback) {
   if (!callback) {
     callback = type
     type = null
