@@ -7,7 +7,7 @@ Extract colors from images. Supports GIF, JPG, PNG, and even SVG!
 ## Installation
 
 ```sh
-npm install get-image-colors --save
+npm install get-image-colors.samjbmason --save
 ```
 
 This package is intended for use in node environments. It won't work in a browser because it has node-specific dependencies.
