@@ -57,7 +57,7 @@ describe('get-image-colors', function () {
   it('works on Buffered JPEG images', function (done) {
     const buffer = fs.readFileSync(path.join(__dirname, '/fixtures/thumb.jpg'))
 
-    getColors(buffer, 'image/jpeg', function (err, palette) {
+    getColors(buffer, 'image/jpeg', 5, function (err, palette) {
       if (err) throw err
       assert(Array.isArray(palette))
       assert(palette.length)
@@ -69,7 +69,7 @@ describe('get-image-colors', function () {
   it('works on Buffered GIF images', function (done) {
     const buffer = fs.readFileSync(path.join(__dirname, '/fixtures/thumb.gif'))
 
-    getColors(buffer, 'image/gif', function (err, palette) {
+    getColors(buffer, 'image/gif', 5, function (err, palette) {
       if (err) throw err
       assert(Array.isArray(palette))
       assert(palette.length)
@@ -81,7 +81,7 @@ describe('get-image-colors', function () {
   it('works on Buffered PNG images', function (done) {
     const buffer = fs.readFileSync(path.join(__dirname, '/fixtures/thumb.png'))
 
-    getColors(buffer, 'image/png', function (err, palette) {
+    getColors(buffer, 'image/png', 5, function (err, palette) {
       if (err) throw err
       assert(Array.isArray(palette))
       assert(palette.length)
@@ -93,7 +93,7 @@ describe('get-image-colors', function () {
   it('works on Buffered SVG images', function (done) {
     const buffer = fs.readFileSync(path.join(__dirname, '/fixtures/thumb.svg'))
 
-    getColors(buffer, 'image/svg+xml', function (err, palette) {
+    getColors(buffer, 'image/svg+xml', 5, function (err, palette) {
       if (err) throw err
       assert(Array.isArray(palette))
       assert(palette.length)
